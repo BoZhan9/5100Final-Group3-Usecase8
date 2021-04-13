@@ -10,8 +10,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridLayout;
 
@@ -30,10 +32,20 @@ public class Dealer {
 	        // Set Layout
 	        frame.setLayout(new BorderLayout());
 	        JPanel twinPane = new JPanel();
-	        frame.add(twinPane, BorderLayout.CENTER);
+	        frame.add(twinPane, BorderLayout.WEST);
             twinPane.setLayout(new GridLayout(1,2));
             twinPane.add(drawForm());
            // twinPane.add(drawInfo());
+            JPanel subPanel1 = new JPanel();
+            subPanel1 = new JPanel(); // sub-panel 1
+            subPanel1.add(new JLabel("PANEL2", SwingConstants.CENTER));
+            subPanel1.setBackground(Color.white);
+            twinPane.add(subPanel1);
+            
+            JPanel subPanel2 = new JPanel(); // sub-panel 2
+            subPanel2.add(new JLabel("PANEL3", SwingConstants.CENTER));
+            subPanel2.setBackground(Color.white);
+            twinPane.add(subPanel2);
 	      
 	        
 	        
@@ -63,7 +75,7 @@ public class Dealer {
 		public static Component  drawForm() {
 			//Set panel with layout and border
 	        JPanel panel = new JPanel();
-	        panel.setBorder(BorderFactory.createTitledBorder("LIST"));
+	        panel.setBorder(BorderFactory.createTitledBorder("PANEL1"));
 	        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 	      
 	        //Create field and labels for  panel and add data to panel
@@ -118,7 +130,13 @@ public class Dealer {
 	        JTextField tf9 = new JTextField(35);
 	        panel.add(lable9);
 	        panel.add(tf9);
+	        panel.setBackground(Color.white);
 	       
+	        
+	        
+	        
+	        
+	        
 	        JButton resp = new JButton("respond");
 	        panel.add(resp);
 	        //Set return
